@@ -382,8 +382,9 @@ export PATH="/bin:/sbin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 	_procedure_check_freespace
 
 	# x - sem suporte a vm/kvm/vmx/svm
-	tmp=$(cat /proc/cpuinfo| egrep "vmx|svm|kvm|lxc")
+	tmp=$(cat /proc/cpuinfo| egrep "vmx|svm|kvm|lxc|hypervisor")
 	[ "x$tmp" = "x" ] && _abort "O suporte a VMX/AMD-V/VT-X/KVM nao esta ativo."
+	# [ "x$tmp" = "vmware" -o "x$tmp" = "hyperv" -o "x$tmp" = "xen"  -o "x$tmp" = "kvm"  -o "x$tmp" = "lxc"  ] && _abort "O suporte a VMX/AMD-V/VT-X/KVM nao esta ativo."
 
 	# - remover alias chato
 	{ unalias cp; unalias mv; unalias rm; } 2>/dev/null 1>/dev/null
