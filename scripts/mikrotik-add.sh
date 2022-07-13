@@ -5,35 +5,11 @@
 
 # Constantes
 	allrosversions="
-		6.32.1 6.32.2
-		6.33
-		6.33.2
-		6.33.3
-		6.33.5
-		6.33.6
-		6.34
-		6.34.1
-		6.34.2
-		6.34.3
-		6.34.4
-		6.34.5
-		6.34.6
-		6.35
-		6.35.1
-		6.35.2
-		6.35.4
-		6.36
-		6.36.1
-		6.36.2
-		6.36.3
-		6.36.4
-		6.37
-		6.37.1
-		6.37.2
-		6.37.3
-		6.37.4
-		6.38
-		6.38.1
+		7.3.1
+		6.49.6
+		5.25
+		4.17
+		3.30
 	"
 
 # x - pre-requisitos
@@ -84,7 +60,7 @@
 		rm -rf "$rundir" 2>/dev/null
 
 	# 2 - download da imagem do site da mititiki
-		url="http://download2.mikrotik.com/routeros/$ver/chr-$ver.vmdk"
+		url="https://download.mikrotik.com/routeros/$ver/chr-$ver.vmdk"
 
 		echo "** Versao: $ver"
 		echo "** URL...: $url"

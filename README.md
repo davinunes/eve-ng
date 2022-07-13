@@ -15,7 +15,7 @@ e atualiza todo o sistema (pode demorar dependendo da sua banda internacional)
 
 ```
 
-  wget https://raw.githubusercontent.com/patrickbrandao/eveunl/master/eve-prepare.sh -O /root/eve-prepare.sh
+  wget https://raw.githubusercontent.com/davinunes/eve-ng/master/eve-prepare.sh -O /root/eve-prepare.sh
 
   chmod +x /root/eve-prepare.sh
 

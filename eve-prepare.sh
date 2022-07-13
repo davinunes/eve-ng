@@ -24,8 +24,11 @@ export PATH="/bin:/sbin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 	# Versoes do bugotik suportadas (lista atualizada pelo site)
 	ALL_ROS_VERSIONS="
-		6.44.5
-		6.45.6
+		7.3.1
+		6.49.6
+		5.25
+		4.17
+		3.30
 	"
 
 	# Versoes do VyOS x86
@@ -39,7 +42,7 @@ export PATH="/bin:/sbin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 	EVE_DOWNLOAD_DIR="/opt/unetlab/downloads"
 
 	# Base remota de icones
-	ICON_HTTP_BASE="https://raw.githubusercontent.com/patrickbrandao/eveunl/master/icons/"
+	ICON_HTTP_BASE="https://raw.githubusercontent.com/davinunes/eve-ng/master/icons/"
 
 	# Dados de repositorio particular IOL
 	IOL_HTTP_BASE="http://www.ajustefino.com/downloads/iol"
@@ -146,7 +149,7 @@ export PATH="/bin:/sbin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 		# baixar script
 		[ -f /root/CiscoKeyGen.py ] || {
 			wget --no-check-certificate \
-			https://raw.githubusercontent.com/patrickbrandao/eveunl/master/CiscoKeyGen.py \
+			https://raw.githubusercontent.com/davinunes/eve-ng/master/CiscoKeyGen.py \
 				-O /root/CiscoKeyGen.py
 			chmod +x /root/CiscoKeyGen.py
 		}
@@ -527,7 +530,7 @@ if [ "x$INST_MK" = "x1" ]; then
 		# Apagar lixo anterior
 		rm -rf "$rosrundir" 2>/dev/null
 		# download da imagem do site da mititiki
-		rosvmdkurl="http://download2.mikrotik.com/routeros/$rosver/chr-$rosver.img.zip"
+		rosvmdkurl="https://download.mikrotik.com/routeros/$rosver/chr-$rosver.img.zip"
 		_echo_lighcyan " -> Mikrotik-$rosver: Obtendo via URL $rosvmdkurl"
 		rosoutfile="/tmp/chr-$rosver.img.zip"
 		rosoutfileunzipped="/tmp/chr-$rosver.img"
