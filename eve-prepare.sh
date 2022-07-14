@@ -797,6 +797,8 @@ fi
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= Acabou
 
 	_eve_fixpermissions
+	cp /opt/unetlab/html/includes/config.php.distribution /opt/unetlab/html/includes/config.php
+	_echo_lighpink "* Lista de Nodes não instalados foi suprimida!"
 	_echo_lighpink "* EVE-NG Concluido!"
 	echo
 
