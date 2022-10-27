@@ -5,6 +5,8 @@
 
 # Constantes
 	allrosversions="
+		7.6
+		7.7beta3
 		7.3.1
 		6.49.6
 		5.25
