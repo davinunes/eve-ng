@@ -95,8 +95,8 @@
 		echo "** Criando diretorio do profile"
 		mkdir -p "$rundir" || _abort "Erro $? ao criar diretorio [$rundir]"
 		qcow2file="$rundir/hda.acow2"
-		echo "** Convertendo [$outfile] para [$qcow2file]"
-		/opt/qemu/bin/qemu-img convert -f raw -O qcow2 "$outfile" "$qcow2file" || _abort "Erro $? ao converter raw"
+		echo "** Convertendo [$rosoutfileunzipped] para [$qcow2file]"
+		/opt/qemu/bin/qemu-img convert -f raw -O qcow2 "$rosoutfileunzipped" "$qcow2file" || _abort "Erro $? ao converter raw"
 
 	# 4 - ajustando permissoes
 		echo "** Ajustando permissoes"
