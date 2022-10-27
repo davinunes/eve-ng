@@ -69,24 +69,34 @@
 		sleep 1
 
 		echo "** Baixando..."
-		outfile="/tmp/chr-$ver.vmdk"
+		outfile="/tmp/chr-$ver.img.zip"
+		rosoutfileunzipped="/tmp/chr-$ver.img"
 		rm -f $outfile 2>/dev/null
 		wget --tries=9 --read-timeout=5 \
 			$url \
 			-O $outfile; wr="$?"
-    if [ "$wr" != "0" ]; then
-      echo "** Erro $? ao baixar [$url] para [$outfile]"
-      return 3
+		if [ "$wr" != "0" ]; then
+		      echo "** Erro $? ao baixar [$url] para [$outfile]"
+		      return 3
 		fi
 
 		echo "** Download concluido: $outfile"
+		
+		
+	# Descompactar
+		cd /tmp || _abort "Erro $? ao acessar diretorio /tmp"
+		[ -f "$rosoutfileunzipped" ] && rm -f "$rosoutfileunzipped" 2>/dev/null
+		unzip "$outfile" || _abort "Erro $? ao descomprimir $rosoutfile"
+		[ -f "$rosoutfileunzipped" ] || _abort "Arquivo resultante do unzip nao encontrado: $rosoutfileunzipped"
+		
+		
 
 	# 3 - converter para qCow2
 		echo "** Criando diretorio do profile"
 		mkdir -p "$rundir" || _abort "Erro $? ao criar diretorio [$rundir]"
 		qcow2file="$rundir/hda.acow2"
 		echo "** Convertendo [$outfile] para [$qcow2file]"
-		/opt/qemu/bin/qemu-img convert -f vmdk -O qcow2 "$outfile" "$qcow2file" || _abort "Erro $? ao converter vmdk"
+		/opt/qemu/bin/qemu-img convert -f raw -O qcow2 "$outfile" "$qcow2file" || _abort "Erro $? ao converter raw"
 
 	# 4 - ajustando permissoes
 		echo "** Ajustando permissoes"
