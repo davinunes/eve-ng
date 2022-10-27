@@ -62,7 +62,7 @@
 		rm -rf "$rundir" 2>/dev/null
 
 	# 2 - download da imagem do site da mititiki
-		url="https://download.mikrotik.com/routeros/$ver/chr-$ver.vmdk"
+		url="https://download.mikrotik.com/routeros/$ver/chr-$ver.img.zip"
 
 		echo "** Versao: $ver"
 		echo "** URL...: $url"
