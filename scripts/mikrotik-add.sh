@@ -5,10 +5,9 @@
 
 # Constantes
 	allrosversions="
-		7.6
-		7.7beta3
-		7.3.1
-		6.49.6
+		7.8
+		7.9rc5
+		6.49.7
 		5.25
 		4.17
 		3.30
@@ -94,7 +93,7 @@
 	# 3 - converter para qCow2
 		echo "** Criando diretorio do profile"
 		mkdir -p "$rundir" || _abort "Erro $? ao criar diretorio [$rundir]"
-		qcow2file="$rundir/hda.acow2"
+		qcow2file="$rundir/hda.qcow2"
 		echo "** Convertendo [$rosoutfileunzipped] para [$qcow2file]"
 		/opt/qemu/bin/qemu-img convert -f raw -O qcow2 "$rosoutfileunzipped" "$qcow2file" || _abort "Erro $? ao converter raw"
 
